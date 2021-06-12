@@ -12,3 +12,40 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.drag-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 75px;
+  height: 90px;
+}
+
+.folder-icon {
+  width: 75px;
+  height: 75px;
+}
+
+.folder-icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.folder-name {
+  color: #fff;
+  text-shadow: 1px 1px #000;
+  font-weight: bold;
+  font-size: 0.756rem;
+  text-align: center;
+}
+
+.noselect {
+  /* Disable selecting the text */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
