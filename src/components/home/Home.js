@@ -19,6 +19,8 @@ export class Home extends Component {
 
   componentDidMount() {
     this.rareEPRef.current.setAttribute('draggable', false)
+    this.newContentRef.current.setAttribute('draggable', false)
+    this.newSamplesRef.current.setAttribute('draggable', false)
   }
 
   render() {
@@ -27,12 +29,28 @@ export class Home extends Component {
         <MenuBar />
         <div className='home-container'>
           <div className='home-screen' style={{backgroundImage:`url(${background})`}}></div>
-          <Draggable bounds='parent' nodeRef={this.nodeRef}>
-            <div className='drag-box' ref={this.nodeRef}>
+          <Draggable nodeRef={this.nodeRef}>
+            <div className='drag-box rare-ep' ref={this.nodeRef}>
               <div className='folder-icon'>
                 <img src={folder} alt='MacOS BigSur Folder Icon' ref={this.rareEPRef}/>
               </div>
               <p className='folder-name'>RARE EP</p>
+            </div>
+          </Draggable>
+          <Draggable nodeRef={this.nodeRef}>
+            <div className='drag-box new-content' ref={this.nodeRef}>
+              <div className='folder-icon'>
+                <img src={folder} alt='MacOS BigSur Folder Icon' ref={this.newContentRef}/>
+              </div>
+              <p className='folder-name'>NEW&nbsp;CONTENT</p>
+            </div>
+          </Draggable>
+          <Draggable nodeRef={this.nodeRef}>
+            <div className='drag-box new-samples' ref={this.nodeRef}>
+              <div className='folder-icon'>
+                <img src={folder} alt='MacOS BigSur Folder Icon' ref={this.newSamplesRef}/>
+              </div>
+              <p className='folder-name'>NEW&nbsp;SAMPLES</p>
             </div>
           </Draggable>
         </div>

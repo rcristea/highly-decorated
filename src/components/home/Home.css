@@ -15,9 +15,7 @@
 
 .drag-box {
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 3;
+  z-index: 1;
   width: 75px;
   height: 90px;
 }
@@ -40,6 +38,21 @@
   text-align: center;
 }
 
+.rare-ep {
+  top: 30%;
+  left: 30%;
+}
+
+.new-content {
+  top: 25%;
+  left: 40%
+}
+
+.new-samples {
+  top: 23%;
+  left: 50%;
+}
+
 .noselect {
   /* Disable selecting the text */
   -webkit-touch-callout: none; /* iOS Safari */
@@ -48,4 +61,32 @@
   -moz-user-select: none; /* Old versions of Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+@media screen and (max-width: 1028px) {
+  .rare-ep {
+    left: 20%;
+  }
+  
+  .new-content {
+    left: 40%
+  }
+  
+  .new-samples {
+    left: 60%;
+  }
+}
+
+@media screen and (max-width: 528px) {
+  .rare-ep {
+    left: 15%;
+  }
+  
+  .new-content {
+    left: 40%
+  }
+  
+  .new-samples {
+    left: 70%;
+  }
 }
