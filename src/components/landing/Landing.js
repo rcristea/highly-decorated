@@ -1,8 +1,7 @@
 import React, { Component, createRef } from 'react'
-import { withRouter } from 'react-router'
 import './Landing.css'
 
-import background from '../../assets/background.jpeg'
+import background from '../../assets/mac_catalina.jpeg'
 import pfp from '../../assets/hd_pfp.png'
 
 export class Landing extends Component {

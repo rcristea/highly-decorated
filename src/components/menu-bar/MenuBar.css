@@ -1,0 +1,66 @@
+.mr-25 {
+  margin-right: 25px !important;
+}
+
+.m-0 {
+  margin: 0 !important;
+}
+
+.menu-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+
+  /* Disable selecting the text */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.apple-icon {
+  padding: 0 10px;
+}
+
+.menu-main, .menu-item {
+  font-size: 0.800rem;
+  color: #fff;
+  margin: 0 7px;
+}
+
+.menu-main {
+  font-weight: bolder;
+  margin-left: 5px;
+}
+
+.menu-bar-left, .menu-bar-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.menu-item-right {
+  font-size: 0.800rem;
+  color: #fff;
+  margin: 0 5px;
+}
+
+.menu-bar-left {
+  flex-grow: 1;
+}
+
+.siri-icon {
+  width: 15px;
+}
+
+@media screen and (max-width: 676px) {
+  .menu-item {
+    display: none;
+  }
+}
