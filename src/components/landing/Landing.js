@@ -1,20 +1,22 @@
 import React, { Component, createRef } from 'react'
+import { withRouter } from 'react-router'
 import './Landing.css'
 
 import background from '../../assets/background.jpeg'
 import pfp from '../../assets/hd_pfp.png'
 
 export class Landing extends Component {
-  isPasswordFilled = false
-
   constructor(props) {
     super(props)
 
+    this.state = {
+      isPasswordFilled: props.isPasswordFilled
+    }
     this.passwordRef = createRef()
   }
 
-  animatePassword = event => {
-    if (!this.isPasswordFilled) {
+  animatePassword() {
+    if (!this.state.isPasswordFilled) {
       var password = 'password'
       password.split('').forEach(function(elem, index) {
         setTimeout(function() {
@@ -22,7 +24,13 @@ export class Landing extends Component {
         }.bind(this), index * 100)
       }, this)
 
-      this.isPasswordFilled = true
+      this.setState({
+        isPasswordFilled: true
+      })
+
+      setTimeout(function() {
+        this.props.history.push('home')
+      }.bind(this), 900)
     }
   }
 
@@ -38,7 +46,7 @@ export class Landing extends Component {
               ref={this.passwordRef}
               type='password'
               placeholder='Enter Password'
-              onClick={this.animatePassword}
+              onClick={this.animatePassword.bind(this)}
             />
           </form>
         </div>
