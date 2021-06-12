@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import './Home.css'
 import { MenuBar } from '../menu-bar/MenuBar'
-import background from '../../assets/mac_catalina.jpeg'
+import { Dock } from '../dock/Dock'
+import background from '../../assets/mac_bigsur.jpeg'
 
 export class Home extends Component {
   render() {
@@ -11,6 +12,7 @@ export class Home extends Component {
         <div className='home-container'>
           <div className='home-screen' style={{backgroundImage:`url(${background})`}}></div>
         </div>
+        <Dock />
       </div>
     )
   }

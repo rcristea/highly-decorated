@@ -1,7 +1,7 @@
 import React, { Component, createRef } from 'react'
 import './Landing.css'
 
-import background from '../../assets/mac_catalina.jpeg'
+import background from '../../assets/mac_bigsur.jpeg'
 import pfp from '../../assets/hd_pfp.png'
 
 export class Landing extends Component {
