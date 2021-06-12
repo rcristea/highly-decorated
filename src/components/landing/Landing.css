@@ -41,6 +41,7 @@
 input[type='password'] {
   padding: 5px 5px 5px 15px;
   border-radius: 100px;
+  border: none;
   background-color: rgba(0, 0, 0, 0.3);
   color: #fff;
   opacity: 0.7;
