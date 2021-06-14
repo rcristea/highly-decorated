@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './Home.css'
 import { MenuBar } from '../menu-bar/MenuBar'
 import { Dock } from '../dock/Dock'
+import { Finder } from '../finder/Finder'
 import background from '../../assets/mac_bigsur.jpeg'
 import Directory from '../directory/Directory'
 
@@ -16,6 +17,7 @@ export class Home extends Component {
           <Directory name='RARE&nbsp;EP' id='rare-ep' />
           <Directory name='NEW&nbsp;SAMPLES' id='new-samples' />
           <Directory name='NEW&nbsp;CONTENT' id='new-content' />
+          <Finder />
         </div>
         <Dock />
       </div>
