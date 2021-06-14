@@ -66,6 +66,13 @@ export class Finder extends Component {
                     <line x1='40' y1='16' x2='44' y2='12' />
                   </svg>
                 </span>
+                <span className='top-panel-icon'>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="32" height="32" viewBox="0 0 48 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <circle cx="10" cy="10" r="7" />
+                    <line x1="21" y1="21" x2="15" y2="15" />
+                  </svg>
+                </span>
               </div>
               <div className='main-panel'>
 
