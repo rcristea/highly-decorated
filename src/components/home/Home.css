@@ -13,31 +13,6 @@
   background-size: cover;
 }
 
-.drag-box {
-  position: absolute;
-  z-index: 1;
-  width: 75px;
-  height: 90px;
-}
-
-.folder-icon {
-  width: 75px;
-  height: 75px;
-}
-
-.folder-icon img {
-  width: 100%;
-  height: 100%;
-}
-
-.folder-name {
-  color: #fff;
-  text-shadow: 1px 1px #000;
-  font-weight: bold;
-  font-size: 0.756rem;
-  text-align: center;
-}
-
 .rare-ep {
   top: 30%;
   left: 30%;

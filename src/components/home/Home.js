@@ -1,93 +1,21 @@
-import React, { Component, createRef } from 'react'
+import React, { Component } from 'react'
 import './Home.css'
 import { MenuBar } from '../menu-bar/MenuBar'
 import { Dock } from '../dock/Dock'
-import Draggable from 'react-draggable'
 import background from '../../assets/mac_bigsur.jpeg'
-import folder from '../../assets/mac_bigsur_folder.png'
+import Directory from '../directory/Directory'
+
 
 export class Home extends Component {
-  constructor(props) {
-    super(props)
-
-    this.nodeRef = createRef()
-    this.rareEPRef = createRef()
-    this.newContentRef = createRef()
-    this.newSamplesRef = createRef()
-
-    this.state = {
-      dragging: false
-    }
-
-    this.onClick = this.onClick.bind(this)
-    this.onDrag = this.onDrag.bind(this)
-    this.onStop = this.onStop.bind(this)
-  }
-
-  componentDidMount() {
-    this.rareEPRef.current.setAttribute('draggable', false)
-    this.newContentRef.current.setAttribute('draggable', false)
-    this.newSamplesRef.current.setAttribute('draggable', false)
-  }
-
-  onClick(e) {
-      
-  }
-
-  onDrag() {
-    this.setState({dragging: true})
-  }
-
-  onStop(...args) {
-    const { dragging } = this.state
-    this.setState({dragging: false})
-    if (!dragging) {
-      this.onClick(...args)
-    }
-  }
-
   render() {
     return (
       <div>
         <MenuBar />
         <div className='home-container'>
           <div className='home-screen' style={{backgroundImage:`url(${background})`}}></div>
-          <Draggable 
-            nodeRef={this.nodeRef}
-            onDrag={this.onDrag}
-            onStop={this.onStop}
-          >
-            <div className='drag-box rare-ep' ref={this.nodeRef}>
-              <div className='folder-icon'>
-                <img src={folder} alt='MacOS BigSur Folder Icon' ref={this.rareEPRef}/>
-              </div>
-              <p className='folder-name'>RARE EP</p>
-            </div>
-          </Draggable>
-          <Draggable 
-            nodeRef={this.nodeRef}
-            onDrag={this.onDrag}
-            onStop={this.onStop}
-          >
-            <div className='drag-box new-content' ref={this.nodeRef}>
-              <div className='folder-icon'>
-                <img src={folder} alt='MacOS BigSur Folder Icon' ref={this.newContentRef}/>
-              </div>
-              <p className='folder-name'>NEW&nbsp;CONTENT</p>
-            </div>
-          </Draggable>
-          <Draggable 
-            nodeRef={this.nodeRef}
-            onDrag={this.onDrag}
-            onStop={this.onStop}
-          >
-          <div className='drag-box new-samples' ref={this.nodeRef}>
-              <div className='folder-icon'>
-                <img src={folder} alt='MacOS BigSur Folder Icon' ref={this.newSamplesRef}/>
-              </div>
-              <p className='folder-name'>NEW&nbsp;SAMPLES</p>
-            </div>
-          </Draggable>
+          <Directory name='RARE&nbsp;EP' id='rare-ep' />
+          <Directory name='NEW&nbsp;SAMPLES' id='new-samples' />
+          <Directory name='NEW&nbsp;CONTENT' id='new-content' />
         </div>
         <Dock />
       </div>
