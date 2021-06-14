@@ -11,10 +11,17 @@ export class Home extends Component {
     super(props)
 
     this.nodeRef = createRef()
-
     this.rareEPRef = createRef()
     this.newContentRef = createRef()
     this.newSamplesRef = createRef()
+
+    this.state = {
+      dragging: false
+    }
+
+    this.onClick = this.onClick.bind(this)
+    this.onDrag = this.onDrag.bind(this)
+    this.onStop = this.onStop.bind(this)
   }
 
   componentDidMount() {
@@ -23,13 +30,33 @@ export class Home extends Component {
     this.newSamplesRef.current.setAttribute('draggable', false)
   }
 
+  onClick(e) {
+      
+  }
+
+  onDrag() {
+    this.setState({dragging: true})
+  }
+
+  onStop(...args) {
+    const { dragging } = this.state
+    this.setState({dragging: false})
+    if (!dragging) {
+      this.onClick(...args)
+    }
+  }
+
   render() {
     return (
       <div>
         <MenuBar />
         <div className='home-container'>
           <div className='home-screen' style={{backgroundImage:`url(${background})`}}></div>
-          <Draggable nodeRef={this.nodeRef}>
+          <Draggable 
+            nodeRef={this.nodeRef}
+            onDrag={this.onDrag}
+            onStop={this.onStop}
+          >
             <div className='drag-box rare-ep' ref={this.nodeRef}>
               <div className='folder-icon'>
                 <img src={folder} alt='MacOS BigSur Folder Icon' ref={this.rareEPRef}/>
@@ -37,7 +64,11 @@ export class Home extends Component {
               <p className='folder-name'>RARE EP</p>
             </div>
           </Draggable>
-          <Draggable nodeRef={this.nodeRef}>
+          <Draggable 
+            nodeRef={this.nodeRef}
+            onDrag={this.onDrag}
+            onStop={this.onStop}
+          >
             <div className='drag-box new-content' ref={this.nodeRef}>
               <div className='folder-icon'>
                 <img src={folder} alt='MacOS BigSur Folder Icon' ref={this.newContentRef}/>
@@ -45,8 +76,12 @@ export class Home extends Component {
               <p className='folder-name'>NEW&nbsp;CONTENT</p>
             </div>
           </Draggable>
-          <Draggable nodeRef={this.nodeRef}>
-            <div className='drag-box new-samples' ref={this.nodeRef}>
+          <Draggable 
+            nodeRef={this.nodeRef}
+            onDrag={this.onDrag}
+            onStop={this.onStop}
+          >
+          <div className='drag-box new-samples' ref={this.nodeRef}>
               <div className='folder-icon'>
                 <img src={folder} alt='MacOS BigSur Folder Icon' ref={this.newSamplesRef}/>
               </div>
