@@ -16,17 +16,12 @@ export class Directory extends Component {
       id: this.props.id
     }
 
-    this.onClick = this.onClick.bind(this)
     this.onDrag = this.onDrag.bind(this)
     this.onStop = this.onStop.bind(this)
   }
 
   componentDidMount() {
     this.imageRef.current.setAttribute('draggable', false)
-  }
-
-  onClick(e) {
-    alert(this.props.id)
   }
 
   onDrag() {
@@ -37,7 +32,7 @@ export class Directory extends Component {
     const { dragging } = this.state
     this.setState({dragging: false})
     if (!dragging) {
-      this.onClick(...args)
+      this.props.onClick(...args)
     }
   }
 
