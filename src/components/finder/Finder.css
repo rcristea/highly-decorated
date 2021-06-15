@@ -1,3 +1,11 @@
+.color-red {
+  background-color: #ff5a50 !important;
+}
+
+.color-orange {
+  background-color: #ffb01e !important;
+}
+
 .finder-container {
   position: absolute;
   z-index: 2;
@@ -20,6 +28,8 @@
   width: 130px;
   border-radius: 10px 0 0 10px;
   border-right: 1px solid #000;
+  display: flex;
+  flex-direction: column;
 }
 
 .right-panel {
@@ -53,4 +63,64 @@
 
 .top-panel-icon {
   margin: 0 5px 0 5px;
+}
+
+.window-buttons {
+  display: flex;
+  width: 100%;
+  margin: 15px 50px 15px 15px;
+}
+
+.circle-button {
+  width: 12px;
+  height: 12px;
+  margin: 4px;
+  color: #8c8c8c;
+  background-color: #8c8c8c;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-button-close:hover:after {
+  content: url('../../assets/svg/close.svg');
+}
+
+.circle-button-minimize:hover:after {
+  content: url('../../assets/svg/minimize.svg');
+}
+
+.circle-button-fullscreen:hover:after {
+  content: url('../../assets/svg/fullscreen.svg');
+}
+
+.left-panel-heading-container {
+  margin: 15px 0 10px 0;
+}
+
+.left-panel-heading {
+  color: #737373;
+  font-size: 0.625rem;
+  font-weight: 800;
+  margin: 15px 0px 0px 15px;
+}
+
+.left-panel-icon {
+  display: flex;
+  color: #fff;
+  align-items: center;
+  font-size: 0.756rem;
+  font-weight: 500;
+  padding: 5px;
+  margin: 0 10px 0 10px;
+}
+
+.left-panel-icon span {
+  margin-left: 5px;
+}
+
+.active {
+  border-radius: 5px;
+  background-color: rgba(155, 155, 155, 0.5);
 }

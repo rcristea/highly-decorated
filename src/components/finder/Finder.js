@@ -1,6 +1,14 @@
 import React, { Component, createRef } from 'react'
 import './Finder.css'
 import Draggable from 'react-draggable'
+import AirDropSVG from '../../assets/svg/airdrop.svg'
+import ClockSVG from '../../assets/svg/clock.svg'
+import AppStoreSVG from '../../assets/svg/appstore.svg'
+import DesktopSVG from '../../assets/svg/desktop.svg'
+import FileSVG from '../../assets/svg/file.svg'
+import DownloadSVG from '../../assets/svg/download.svg'
+import MusicSVG from '../../assets/svg/music.svg'
+import HomeSVG from '../../assets/svg/home.svg'
 
 export class Finder extends Component {
   constructor(props) {
@@ -22,7 +30,57 @@ export class Finder extends Component {
         <div className='finder-container' ref={this.nodeRef}>
           <div className='finder'>
             <div className='left-panel handle'>
-
+              <div className='window-buttons'>
+                <div className='circle-button circle-button-close'></div>
+                <div className='circle-button circle-button-minimize'></div>
+                <div className='circle-button circle-button-fullscreen'></div>
+              </div>
+              <div className='left-panel-heading-container'>
+                <span className='left-panel-heading'>Favorites</span>
+              </div>
+              <div className='left-panel-icon'>
+                <img src={AirDropSVG} alt='Airdrop icon'/>
+                <span>AirDrop</span>
+              </div>
+              <div className='left-panel-icon'>
+                <img src={ClockSVG} alt='Clock icon'/>
+                <span>Recents</span>
+              </div>
+              <div className='left-panel-icon'>
+                <img src={AppStoreSVG} alt='Apple app store icon'/>
+                <span>Applications</span>
+              </div>
+              <div className='left-panel-icon active'>
+                <img src={DesktopSVG} alt='Desktop icon'/>
+                <span>Desktop</span>
+              </div>
+              <div className='left-panel-icon'>
+                <img src={FileSVG} alt='File icon'/>
+                <span>Documents</span>
+              </div>
+              <div className='left-panel-icon'>
+                <img src={DownloadSVG} alt='Download icon'/>
+                <span>Downloads</span>
+              </div>
+              <div className='left-panel-icon'>
+                <img src={MusicSVG} alt='Music icon'/>
+                <span>Music</span>
+              </div>
+              <div className='left-panel-icon'>
+                <img src={HomeSVG} alt='Home icon'/>
+                <span>highlydeco...</span>
+              </div>
+              <div className='left-panel-heading-container mt-15'>
+                <span className='left-panel-heading'>Tags</span>
+              </div>
+              <div className='left-panel-icon'>
+                <div className='circle-button color-red'></div>
+                <span>Red</span>
+              </div>
+              <div className='left-panel-icon'>
+                <div className='circle-button color-orange'></div>
+                <span>Orange</span>
+              </div>
             </div>
             <div className='right-panel'>
               <div className='top-panel handle'>
@@ -44,7 +102,7 @@ export class Finder extends Component {
                   Desktop
                 </span>
                 <span className='top-panel-icon'>
-                  <svg xmlns='http://www.w3.org/2000/svg' className='icon icon-tabler icon-tabler-layout-columns' width='32' height='32' viewBox='0 0 48 24' strokeWidth='1.5' stroke='#ffffff' fill='none' strokeLinecap='round' strokeLinejoin='round'>
+                  <svg xmlns='http://www.w3.org/2000/svg' className='icon icon-tabler icon-tabler-layout-columns' width='32' height='32' viewBox='0 0 48 24' strokeWidth='1.5' stroke='#b4b4b4' fill='none' strokeLinecap='round' strokeLinejoin='round'>
                     <path stroke='none' d='M0 0h24v24H0z' fill='none'/>
                     <line x1='12' y1='4' x2='12' y2='20' />
                     <line x1='20' y1='4' x2='20' y2='20' />
@@ -56,7 +114,7 @@ export class Finder extends Component {
                   </svg>
                 </span>
                 <span className='top-panel-icon'>
-                  <svg xmlns='http://www.w3.org/2000/svg' className='icon icon-tabler icon-tabler-layout-columns' width='32' height='32' viewBox='0 0 48 24' strokeWidth='1.5' stroke='#ffffff' fill='none' strokeLinecap='round' strokeLinejoin='round'>
+                  <svg xmlns='http://www.w3.org/2000/svg' className='icon icon-tabler icon-tabler-layout-columns' width='32' height='32' viewBox='0 0 48 24' strokeWidth='1.5' stroke='#b4b4b4' fill='none' strokeLinecap='round' strokeLinejoin='round'>
                     <path stroke='none' d='M0 0h24v24H0z' fill='none'/>
                     <line x1='4' y1='10' x2='30' y2='10' />
                     <rect x='4' y='16' width='6' height='6' rx='2' />
@@ -67,7 +125,7 @@ export class Finder extends Component {
                   </svg>
                 </span>
                 <span className='top-panel-icon'>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-search" width="32" height="32" viewBox="0 0 48 24" strokeWidth="1.5" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-search" width="32" height="32" viewBox="0 0 48 24" strokeWidth="1.5" stroke="#b4b4b4" fill="none" strokeLinecap="round" strokeLinejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <circle cx="10" cy="10" r="7" />
                     <line x1="21" y1="21" x2="15" y2="15" />
