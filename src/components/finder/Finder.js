@@ -22,6 +22,23 @@ export class Finder extends Component {
       directory: this.props.directory,
       directoryName: this.props.directoryName
     }
+
+    this.fullscreen = this.fullscreen.bind(this)
+  }
+
+  fullscreen() {
+    if (this.nodeRef.current.style.width === '100%') {
+      this.nodeRef.current.style.width = '850px'
+      this.nodeRef.current.style.height = '400px'
+      this.nodeRef.current.style.top = '15%'
+      this.nodeRef.current.style.left = '10%'
+    } else {
+      this.nodeRef.current.style.width = '100%'
+    this.nodeRef.current.style.height = '95%'
+    this.nodeRef.current.style.top = '30px'
+    this.nodeRef.current.style.left = '0'
+    }
+    
   }
 
   render() {
@@ -34,9 +51,9 @@ export class Finder extends Component {
           <div className='finder'>
             <div className='left-panel handle'>
               <div className='window-buttons'>
-                <div className='circle-button circle-button-close'></div>
-                <div className='circle-button circle-button-minimize'></div>
-                <div className='circle-button circle-button-fullscreen'></div>
+                <div className='circle-button circle-button-close' onClick={this.props.onClick}></div>
+                <div className='circle-button circle-button-minimize' onClick={this.props.onClick}></div>
+                <div className='circle-button circle-button-fullscreen' onClick={this.fullscreen}></div>
               </div>
               <div className='left-panel-heading-container'>
                 <span className='left-panel-heading'>Favorites</span>

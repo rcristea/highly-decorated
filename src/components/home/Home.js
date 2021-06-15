@@ -49,9 +49,9 @@ export class Home extends Component {
           <Directory name='RARE&nbsp;EP' id='rare-ep' onClick={this.setRareEP}/>
           <Directory name='NEW&nbsp;SAMPLES' id='new-samples' onClick={this.setNewSamples} />
           <Directory name='NEW&nbsp;CONTENT' id='new-content' onClick={this.setNewContent} />
-          { this.state.showRareEP && <Finder directory='rare-ep' directoryName='RARE&nbsp;EP'/> }
-          { this.state.showNewContent && <Finder directory='new-content' directoryName='NEW&nbsp;CONTENT'/> }
-          { this.state.showNewSamples && <Finder directory='new-samples' directoryName='NEW&nbsp;SAMPLES'/> }
+          { this.state.showRareEP && <Finder directory='rare-ep' directoryName='RARE&nbsp;EP' onClick={this.setRareEP} /> }
+          { this.state.showNewSamples && <Finder directory='new-samples' directoryName='NEW&nbsp;SAMPLES' onClick={this.setNewSamples} /> }
+          { this.state.showNewContent && <Finder directory='new-content' directoryName='NEW&nbsp;CONTENT' onClick={this.setNewContent} /> }
         </div>
         <Dock />
       </div>
