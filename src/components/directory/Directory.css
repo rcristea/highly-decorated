@@ -1,0 +1,24 @@
+.drag-box {
+  position: absolute;
+  z-index: 1;
+  width: 75px;
+  height: 90px;
+}
+
+.dir-icon {
+  width: 75px;
+  height: 75px;
+}
+
+.dir-icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.dir-name {
+  color: #fff;
+  text-shadow: 1px 1px #000;
+  font-weight: bold;
+  font-size: 0.756rem;
+  text-align: center;
+}
