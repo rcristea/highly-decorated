@@ -20,24 +20,57 @@ export class Home extends Component {
     this.setRareEP = this.setRareEP.bind(this)
     this.setNewContent = this.setNewContent.bind(this)
     this.setNewSamples = this.setNewSamples.bind(this)
+    this.swapRareEP = this.swapRareEP.bind(this)
+    this.swapNewContent = this.swapNewContent.bind(this)
+    this.swapNewSamples = this.swapNewSamples.bind(this)
   }
 
   setRareEP() {
     this.setState(prevState => ({
-      showRareEP: !prevState.showRareEP
+      showRareEP: !prevState.showRareEP,
+      showNewContent: false,
+      showNewSamples: false
     }))
   }
 
   setNewContent() {
     this.setState(prevState => ({
-      showNewContent: !prevState.showNewContent
+      showRareEP: false,
+      showNewContent: !prevState.showNewContent,
+      showNewSamples: false
     }))
   }
 
   setNewSamples() {
     this.setState(prevState => ({
+      showRareEP: false,
+      showNewContent: false,
       showNewSamples: !prevState.showNewSamples
     }))
+  }
+
+  swapRareEP() {
+    this.setState({
+      showRareEP: true,
+      showNewContent: false,
+      showNewSamples: false
+    })
+  }
+
+  swapNewContent() {
+    this.setState({
+      showRareEP: false,
+      showNewContent: true,
+      showNewSamples: false
+    })
+  }
+
+  swapNewSamples() {
+    this.setState({
+      showRareEP: false,
+      showNewContent: false,
+      showNewSamples: true
+    })
   }
 
   render() {
@@ -49,9 +82,9 @@ export class Home extends Component {
           <Directory name='RARE&nbsp;EP' id='rare-ep' onClick={this.setRareEP}/>
           <Directory name='NEW&nbsp;SAMPLES' id='new-samples' onClick={this.setNewSamples} />
           <Directory name='NEW&nbsp;CONTENT' id='new-content' onClick={this.setNewContent} />
-          { this.state.showRareEP && <Finder directory='rare-ep' directoryName='RARE&nbsp;EP' onClick={this.setRareEP} /> }
-          { this.state.showNewSamples && <Finder directory='new-samples' directoryName='NEW&nbsp;SAMPLES' onClick={this.setNewSamples} /> }
-          { this.state.showNewContent && <Finder directory='new-content' directoryName='NEW&nbsp;CONTENT' onClick={this.setNewContent} /> }
+          { this.state.showRareEP && <Finder directory='rare-ep' directoryName='RARE&nbsp;EP' onClick={this.setRareEP} swapRareEP={this.swapRareEP} swapNewContent={this.swapNewContent} swapNewSamples={this.swapNewSamples} /> }
+          { this.state.showNewSamples && <Finder directory='new-samples' directoryName='NEW&nbsp;SAMPLES' onClick={this.setNewSamples} swapRareEP={this.swapRareEP} swapNewContent={this.swapNewContent} swapNewSamples={this.swapNewSamples} /> }
+          { this.state.showNewContent && <Finder directory='new-content' directoryName='NEW&nbsp;CONTENT' onClick={this.setNewContent} swapRareEP={this.swapRareEP} swapNewContent={this.swapNewContent} swapNewSamples={this.swapNewSamples} /> }
         </div>
         <Dock />
       </div>

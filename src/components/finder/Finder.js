@@ -154,7 +154,7 @@ export class Finder extends Component {
               </div>
               <div className='main-panel'>
                 <div className='finder-col'>
-                  <div className={`finder-row ${this.state.directory === 'rare-ep' ? 'active' : ''}`}>
+                  <div className={`finder-row ${this.state.directory === 'rare-ep' ? 'active' : ''}`} onClick={this.props.swapRareEP}>
                     <img src={folder} alt='MacOS BigSur folder icon' width='15px' />
                     <span className='finder-row-directory-name'>RARE EP</span>
                     <span>
@@ -165,7 +165,7 @@ export class Finder extends Component {
                       </svg>
                     </span>
                   </div>
-                  <div className={`finder-row ${this.state.directory === 'new-content' ? 'active' : ''}`}>
+                  <div className={`finder-row ${this.state.directory === 'new-content' ? 'active' : ''}`} onClick={this.props.swapNewContent}>
                     <img src={folder} alt='MacOS BigSur folder icon' width='15px' />
                     <span className='finder-row-directory-name'>NEW CONTENT</span>
                     <span>
@@ -176,7 +176,7 @@ export class Finder extends Component {
                       </svg>
                     </span>
                   </div>
-                  <div className={`finder-row ${this.state.directory === 'new-samples' ? 'active' : ''}`}>
+                  <div className={`finder-row ${this.state.directory === 'new-samples' ? 'active' : ''}`} onClick={this.props.swapNewSamples}>
                     <img src={folder} alt='MacOS BigSur folder icon' width='15px' />
                     <span className='finder-row-directory-name'>NEW SAMPLES</span>
                     <span>
