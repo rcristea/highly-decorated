@@ -13,7 +13,7 @@ export class FinderDirectory extends Component {
   rareEP() {
     return (
       <div className='finder-col'>
-        
+        rareEP
       </div>
     )
   }
@@ -21,7 +21,7 @@ export class FinderDirectory extends Component {
   newContent() {
     return (
       <div className='finder-col'>
-
+        newContent
       </div>
     )
   }
@@ -29,7 +29,7 @@ export class FinderDirectory extends Component {
   newSamples() {
     return (
       <div className='finder-col'>
-        
+        newSamples
       </div>
     )
   }
