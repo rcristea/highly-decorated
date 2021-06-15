@@ -49,8 +49,9 @@
 }
 
 .main-panel {
-  background-color: rgb(30, 30, 30);
+  background-color: rgb(40, 40, 40);
   border-radius: 0 0 10px 0;
+  display: flex;
   flex-grow: 1;
 }
 
@@ -123,4 +124,24 @@
 .active {
   border-radius: 5px;
   background-color: rgba(155, 155, 155, 0.5);
+}
+
+.finder-col {
+  height: 100%;
+  width: 200px;
+  border-right: 1px solid #000;
+}
+
+.finder-row {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  padding: 3px 5px 3px 5px;
+}
+
+.finder-row-directory-name {
+  color: #fff;
+  font-size: 0.756rem;
+  margin: 2px 0 0 5px;
+  flex-grow: 1;
 }

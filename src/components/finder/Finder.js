@@ -1,6 +1,7 @@
 import React, { Component, createRef } from 'react'
 import './Finder.css'
 import Draggable from 'react-draggable'
+import { FinderDirectory } from '../finder-directory/FinderDirectory'
 import AirDropSVG from '../../assets/svg/airdrop.svg'
 import ClockSVG from '../../assets/svg/clock.svg'
 import AppStoreSVG from '../../assets/svg/appstore.svg'
@@ -9,6 +10,7 @@ import FileSVG from '../../assets/svg/file.svg'
 import DownloadSVG from '../../assets/svg/download.svg'
 import MusicSVG from '../../assets/svg/music.svg'
 import HomeSVG from '../../assets/svg/home.svg'
+import folder from '../../assets/mac_bigsur_folder.png'
 
 export class Finder extends Component {
   constructor(props) {
@@ -16,8 +18,9 @@ export class Finder extends Component {
 
     this.nodeRef = createRef()
 
-    this.setState = {
-      directory: this.props.directory
+    this.state = {
+      directory: this.props.directory,
+      directoryName: this.props.directoryName
     }
   }
 
@@ -99,7 +102,7 @@ export class Finder extends Component {
                   </svg>
                 </span>
                 <span className='directory-title'>
-                  Desktop
+                  {this.props.directoryName}
                 </span>
                 <span className='top-panel-icon'>
                   <svg xmlns='http://www.w3.org/2000/svg' className='icon icon-tabler icon-tabler-layout-columns' width='32' height='32' viewBox='0 0 48 24' strokeWidth='1.5' stroke='#b4b4b4' fill='none' strokeLinecap='round' strokeLinejoin='round'>
@@ -133,7 +136,42 @@ export class Finder extends Component {
                 </span>
               </div>
               <div className='main-panel'>
-
+                <div className='finder-col'>
+                  <div className={`finder-row ${this.state.directory === 'rare-ep' ? 'active' : ''}`}>
+                    <img src={folder} alt='MacOS BigSur folder icon' width='15px' />
+                    <span className='finder-row-directory-name'>RARE EP</span>
+                    <span>
+                      <svg xmlns='http://www.w3.org/2000/svg' className='icon icon-tabler icon-tabler-arrow-right' width='5' height='10' viewBox='0 0 5 10' strokeWidth='1' stroke='#b4b4b4' fill='none' strokeLinecap='round' strokeLinejoin='round'>
+                        <path stroke='none' d='M0 0h24v24H0z' fill='none'/>
+                        <line x1='1' y1='1' x2='5' y2='4.5' />
+                        <line x1='1' y1='8' x2='5' y2='4.5' />
+                      </svg>
+                    </span>
+                  </div>
+                  <div className={`finder-row ${this.state.directory === 'new-content' ? 'active' : ''}`}>
+                    <img src={folder} alt='MacOS BigSur folder icon' width='15px' />
+                    <span className='finder-row-directory-name'>NEW CONTENT</span>
+                    <span>
+                      <svg xmlns='http://www.w3.org/2000/svg' className='icon icon-tabler icon-tabler-arrow-right' width='5' height='10' viewBox='0 0 5 10' strokeWidth='1' stroke='#b4b4b4' fill='none' strokeLinecap='round' strokeLinejoin='round'>
+                        <path stroke='none' d='M0 0h24v24H0z' fill='none'/>
+                        <line x1='1' y1='1' x2='5' y2='4.5' />
+                        <line x1='1' y1='8' x2='5' y2='4.5' />
+                      </svg>
+                    </span>
+                  </div>
+                  <div className={`finder-row ${this.state.directory === 'new-samples' ? 'active' : ''}`}>
+                    <img src={folder} alt='MacOS BigSur folder icon' width='15px' />
+                    <span className='finder-row-directory-name'>NEW SAMPLES</span>
+                    <span>
+                      <svg xmlns='http://www.w3.org/2000/svg' className='icon icon-tabler icon-tabler-arrow-right' width='5' height='10' viewBox='0 0 5 10' strokeWidth='1' stroke='#b4b4b4' fill='none' strokeLinecap='round' strokeLinejoin='round'>
+                        <path stroke='none' d='M0 0h24v24H0z' fill='none'/>
+                        <line x1='1' y1='1' x2='5' y2='4.5' />
+                        <line x1='1' y1='8' x2='5' y2='4.5' />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                <FinderDirectory directory={this.state.directory} />
               </div>
             </div>
           </div>

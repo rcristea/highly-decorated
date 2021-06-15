@@ -17,7 +17,7 @@ export class Home extends Component {
           <Directory name='RARE&nbsp;EP' id='rare-ep' />
           <Directory name='NEW&nbsp;SAMPLES' id='new-samples' />
           <Directory name='NEW&nbsp;CONTENT' id='new-content' />
-          <Finder directory='rare-ep'/>
+          <Finder directory='rare-ep' directoryName='RARE&nbsp;EP'/>
         </div>
         <Dock />
       </div>
