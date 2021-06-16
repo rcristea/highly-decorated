@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component, createRef } from 'react'
 import './FinderDirectory.css'
+import music_icon from '../../assets/mac_bigsur_music.png'
 
 export class FinderDirectory extends Component {
   constructor(props) {
@@ -13,7 +14,14 @@ export class FinderDirectory extends Component {
   rareEP() {
     return (
       <div className='finder-col'>
-        rareEP
+        <div className={`finder-row`}>
+          <img src={music_icon} alt='MacOS BigSur folder icon' width='15px' />
+          <span className='finder-row-directory-name'>example_001.wav</span>
+        </div>
+        <div className={`finder-row`}>
+          <img src={music_icon} alt='MacOS BigSur folder icon' width='15px' />
+          <span className='finder-row-directory-name'>example_002.wav</span>
+        </div>
       </div>
     )
   }
@@ -21,7 +29,14 @@ export class FinderDirectory extends Component {
   newContent() {
     return (
       <div className='finder-col'>
-        newContent
+        <div className={`finder-row`}>
+          <img src={music_icon} alt='MacOS BigSur folder icon' width='15px' />
+          <span className='finder-row-directory-name'>example_003.wav</span>
+        </div>
+        <div className={`finder-row`}>
+          <img src={music_icon} alt='MacOS BigSur folder icon' width='15px' />
+          <span className='finder-row-directory-name'>example_004.wav</span>
+        </div>
       </div>
     )
   }
@@ -29,7 +44,14 @@ export class FinderDirectory extends Component {
   newSamples() {
     return (
       <div className='finder-col'>
-        newSamples
+        <div className={`finder-row`}>
+          <img src={music_icon} alt='MacOS BigSur folder icon' width='15px' />
+          <span className='finder-row-directory-name'>example_005.wav</span>
+        </div>
+        <div className={`finder-row`}>
+          <img src={music_icon} alt='MacOS BigSur folder icon' width='15px' />
+          <span className='finder-row-directory-name'>example_006.wav</span>
+        </div>
       </div>
     )
   }
