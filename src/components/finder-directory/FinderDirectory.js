@@ -1,4 +1,4 @@
-import React, { Component, createRef } from 'react'
+import React, { Component } from 'react'
 import './FinderDirectory.css'
 import music_icon from '../../assets/mac_bigsur_music.png'
 
@@ -14,13 +14,13 @@ export class FinderDirectory extends Component {
   rareEP() {
     return (
       <div className='finder-col'>
-        <div className={`finder-row`}>
+        <div className={`finder-row ${this.props.activeSongName === 'reasons' ? 'active' : ''}`} onClick={() => this.props.updateActiveSong('reasons')}>
           <img src={music_icon} alt='MacOS BigSur folder icon' width='15px' />
-          <span className='finder-row-directory-name'>example_001.wav</span>
+          <span className='finder-row-directory-name'>reasons.wav</span>
         </div>
-        <div className={`finder-row`}>
+        <div className={`finder-row ${this.props.activeSongName === 'porcelain' ? 'active' : ''}`} onClick={() => this.props.updateActiveSong('porcelain')}>
           <img src={music_icon} alt='MacOS BigSur folder icon' width='15px' />
-          <span className='finder-row-directory-name'>example_002.wav</span>
+          <span className='finder-row-directory-name'>porcelain.wav</span>
         </div>
       </div>
     )
