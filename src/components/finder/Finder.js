@@ -2,6 +2,7 @@ import React, { Component, createRef } from 'react'
 import './Finder.css'
 import Draggable from 'react-draggable'
 import { FinderDirectory } from '../finder-directory/FinderDirectory'
+import { SpotifyView } from '../SpotifyView/SpotifyView'
 import AirDropSVG from '../../assets/svg/airdrop.svg'
 import ClockSVG from '../../assets/svg/clock.svg'
 import AppStoreSVG from '../../assets/svg/appstore.svg'
@@ -20,10 +21,12 @@ export class Finder extends Component {
 
     this.state = {
       directory: this.props.directory,
-      directoryName: this.props.directoryName
+      directoryName: this.props.directoryName,
+      activeSongName: ''
     }
 
     this.fullscreen = this.fullscreen.bind(this)
+    this.updateActiveSong = this.updateActiveSong.bind(this)
   }
 
   fullscreen() {
@@ -34,11 +37,16 @@ export class Finder extends Component {
       this.nodeRef.current.style.left = '10%'
     } else {
       this.nodeRef.current.style.width = '100%'
-    this.nodeRef.current.style.height = '95%'
-    this.nodeRef.current.style.top = '30px'
-    this.nodeRef.current.style.left = '0'
-    }
-    
+      this.nodeRef.current.style.height = '95%'
+      this.nodeRef.current.style.top = '30px'
+      this.nodeRef.current.style.left = '0'
+    } 
+  }
+
+  updateActiveSong(newSong) {
+    this.setState({
+      activeSongName: newSong
+    })
   }
 
   render() {
@@ -188,7 +196,8 @@ export class Finder extends Component {
                     </span>
                   </div>
                 </div>
-                <FinderDirectory directory={this.state.directory} />
+                <FinderDirectory directory={this.state.directory} updateActiveSong={this.updateActiveSong}/>
+                <SpotifyView activeSongName={this.state.activeSongName}/>
               </div>
             </div>
           </div>
