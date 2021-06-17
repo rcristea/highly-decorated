@@ -196,7 +196,7 @@ export class Finder extends Component {
                     </span>
                   </div>
                 </div>
-                <FinderDirectory directory={this.state.directory} updateActiveSong={this.updateActiveSong}/>
+                <FinderDirectory directory={this.state.directory} updateActiveSong={this.updateActiveSong} activeSongName={this.state.activeSongName}/>
                 <SpotifyView activeSongName={this.state.activeSongName}/>
               </div>
             </div>

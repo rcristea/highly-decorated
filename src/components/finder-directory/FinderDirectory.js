@@ -14,11 +14,11 @@ export class FinderDirectory extends Component {
   rareEP() {
     return (
       <div className='finder-col'>
-        <div className={`finder-row`} onClick={() => this.props.updateActiveSong('reasons')}>
+        <div className={`finder-row ${this.props.activeSongName === 'reasons' ? 'active' : ''}`} onClick={() => this.props.updateActiveSong('reasons')}>
           <img src={music_icon} alt='MacOS BigSur folder icon' width='15px' />
           <span className='finder-row-directory-name'>reasons.wav</span>
         </div>
-        <div className={`finder-row`} onClick={() => this.props.updateActiveSong('porcelain')}>
+        <div className={`finder-row ${this.props.activeSongName === 'porcelain' ? 'active' : ''}`} onClick={() => this.props.updateActiveSong('porcelain')}>
           <img src={music_icon} alt='MacOS BigSur folder icon' width='15px' />
           <span className='finder-row-directory-name'>porcelain.wav</span>
         </div>
