@@ -3,7 +3,7 @@ import './Home.css'
 import { MenuBar } from '../menu-bar/MenuBar'
 import { Dock } from '../dock/Dock'
 import { Finder } from '../finder/Finder'
-import background from '../../assets/mac_bigsur.jpeg'
+import background from '../../assets/hd.jpeg'
 import Directory from '../directory/Directory'
 
 
