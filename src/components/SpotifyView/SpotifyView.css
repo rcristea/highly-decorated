@@ -2,3 +2,12 @@
   width: 100%;
   min-width: 300px;
 }
+
+.iframe-holder {
+  background: url('../../assets/loader.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 25px;
+  width: 100%;
+  height: 100%;
+}
